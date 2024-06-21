@@ -1,0 +1,114 @@
+/**
+This begins the styling of the header
+@contributors:
+-> Iyanuoluwa Dayisi
+-> Solomon Okomowho
+
+The Header Layout
+* Desktop Version
+ LOGO NAV TRY AUTH
+* Tab and Mobile
+ LOGO TRY HAMBURGER ICON
+
+
+Color:
+Primary - 133b5d
+Secondary - ff6400
+**/
+
+header{
+    box-shadow: 2px 1px #133b5d;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 33px);
+    column-gap: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+#logo{
+    grid-column: 1/3;
+    grid-row: 1/3;
+    text-align: center;
+    height: 100px;
+}
+#logo img{
+    object-fit: cover;
+    height: 100%;
+}
+
+#nav {
+    grid-column: 4/6;
+    grid-row: 2/3;
+    text-align: center;
+}
+
+#nav nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#nav nav ul li {
+    float: left;
+}
+  
+#nav nav ul  li a {
+    display: block;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #133b5d;
+}
+
+#nav nav ul  li a:hover{
+    cursor: pointer;
+    color: #ff6400;
+}
+
+#try{
+    grid-column: 6/7;
+    grid-row: 2/3;
+}
+
+.try_it_out{
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #ff6400;
+}
+
+#auth{
+    grid-column: 7/9;
+    grid-row: 2/3;
+}
+
+#auth nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#auth nav ul li {
+    float: left;
+}
+  
+#auth nav ul  li a {
+    display: block;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #133b5d;
+}
+
+#auth nav ul  li a:hover{
+    cursor: pointer;
+    color: #ff6400;
+}
