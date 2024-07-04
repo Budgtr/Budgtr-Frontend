@@ -1,0 +1,11 @@
+.table{
+    width: 100%;
+    padding: 10px;
+    border-collapse: collapse;
+    border: none;
+}
+
+table>thead>tr>th, table>tbody>tr>td, table>tfoot>tr>th{
+    border: 1px solid grey;
+    padding: 10px;
+}

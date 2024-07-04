@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    color: #133b5d;
+}
+
+section{
+    height: 100vh;
+}
+
+.budget_slides{
+    height: 500px;
+}
