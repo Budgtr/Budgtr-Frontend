@@ -1,27 +1,55 @@
+let table_engine = document.getElementById('budget_engine');
+
+let loaderImg = `
+    <img src="/static/img/1485.gif" alt="budgtr logo">
+`
+localStorage.removeItem('tableEntries')
+let table_json = localStorage.getItem('tableEntries') ? JSON.parse(localStorage.getItem('tableEntries')) : {};
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         loop:true,
         margin:10,
         items:1,
         nav:false,
+        dots: false,
+        slideTransition:'fade',
+        smartSpeed: 1000,
         autoplay:true,
         autoplayTimeout:3000
     });
-
 })
 
 function startEngine(){
     let budgetAmount = document.getElementById("budget_amount");
+    localStorage.setItem('tableEntries', [])
     if (budgetAmount.value > 0)
     {
-        startTableEngine()
+        saveBudgetAmount(budgetAmount.value)
+        startTableEngine().then(renderCreditTable())
+    }
+    else{
+        table_engine.innerHTML = "<h3 class='poppins_small'>Please enter a Budget Value</h3>";
     }
 }
 
 
-function startTableEngine()
+function saveBudgetAmount(budgetValue)
+{
+    let budgetEntry = {
+        "item" : "Income",
+        "amount" : budgetValue,
+        "debit" : ""
+    }
+
+    table_json.credit = budgetEntry;
+    localStorage.setItem('tableEntries', JSON.stringify(table_json))
+}
+
+
+async function startTableEngine()
 {
     // Start the engine
+
     let table = `
     <table class="table border-light">
         <thead>
@@ -36,19 +64,86 @@ function startTableEngine()
         <tbody id="budget-table-body">
 
         </tbody>
+        <tfoot class="margin-5">
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="Item" placeholder="item" class="form-control-small">
+                </td>
+                <td>
+                    <input type="text" id="amount" placeholder="amount" class="form-control-small">
+                </td>
+                <td>
+                    <input type='submit' onclick='saveEntry()' class="button button-block engine_button" value='Add Item'>
+                </td>
+            </tr>
+        </tfoot>
     </table>
-    <button class="button button-right margin-5">Add Item</button>`;
+    `;
 
-    let table_engine = document.getElementById('budget_engine');
+    table_engine.innerHTML = table;
+}
 
-    let loaderImg = `
-        <img src="/static/img/1485.gif" alt="budgtr logo">
-    `
-    table_engine.innerHTML = loaderImg;
+function saveEntry(){
+    let item = document.getElementById('Item');
+    let amount = document.getElementById('amount');
+    if (item.value == "" || amount.value == "")
+    {
+        // Log Error
+    }
 
+    let newEntry = {
+        "item" : item.value,
+        "credit" : "",
+        "debit" : amount.value
+    }
 
-    setTimeout(()=>{
+    if (!table_json.debits)
+    {
+        table_json.debits = []
+    }
+    
+    table_json.debits.push(newEntry);
+    renderCreditTable();
+    renderDebitTable();
+    localStorage.setItem('tableEntries', JSON.stringify(table_json))
+    item.value = "";
+    amount.value = "";
+}
 
-        table_engine.innerHTML = table;  
-    }, 2000);
+function renderCreditTable()
+{
+    let table_body = document.getElementById('budget-table-body');
+    table_body.innerHTML = "";
+    let creditTr = document.createElement('tr');
+    let amount = table_json.credit.amount
+    creditTr.innerHTML = `
+        <td></td>
+        <td>${table_json.credit.item}</td>
+        <td>${table_json.credit.amount}</td>
+        <td>${table_json.credit.debit}</td>
+        <td>${amount}</td>
+    `;
+    table_body.appendChild(creditTr)
+
+}
+
+function renderDebitTable()
+{
+    let table_body = document.getElementById('budget-table-body');
+    let amount = table_json.credit.amount;
+    if (table_json.debits)
+    {
+        table_json.debits.forEach((entry, index) => {
+            amount -= entry.debit;
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${entry.item}</td>
+                <td>${entry.credit}</td>
+                <td>${entry.debit}</td>
+                <td>${amount}</td>
+            `;
+            table_body.appendChild(tr)
+        })
+    }    
 }

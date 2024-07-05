@@ -5,7 +5,14 @@
     border: none;
 }
 
-table>thead>tr>th, table>tbody>tr>td, table>tfoot>tr>th{
-    border: 1px solid grey;
+table>thead>tr>th{
+    border : none;
+    border-bottom: 2px solid #133b5d;
+    padding: 10px;
+}
+
+table>tbody>tr>td, table>tfoot>tr>td{
+    border : none;
+    border-bottom: 1px solid #133b5d;
     padding: 10px;
 }

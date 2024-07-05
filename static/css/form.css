@@ -14,11 +14,9 @@ label{
     text-align: center;
 }
 
-.form-group{
-    max-width: 250px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+.form-control-small{
+    padding: 8px;
+    font-size: 13px;
+    text-align: center;
 }
+
