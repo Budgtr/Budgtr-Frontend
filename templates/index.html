@@ -89,7 +89,34 @@ Home
     </div>
 </section>
 
-<section id="about">
-    <h1>About</h1>
+<section id="about" class="grey-bg">
+    <h1 class="poppins_large p-5">
+        Meet the Budgtr Team
+    </h1>
+
+    <div style="display: flex; height:400px; padding:10px;">
+        <div class="profile_card">
+            <div class="img-card">
+                <img src="{{ url_for('static', filename='img/Solomon.jpeg') }}">
+            </div>
+            <div class="profile-text">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dignissimos consequatur atque veniam minima itaque doloremque ab iste? Dolores, ipsam! Dicta, placeat officiis distinctio minima officia ratione pariatur expedita saepe!
+                </p>
+                <a href="">View Profile</a>
+            </div>
+        </div>
+        <div class="profile_card">
+            <div class="img-card">
+                <img src="{{ url_for('static', filename='img/Iyanu.JPG') }}">
+            </div>
+            <div class="profile-text">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dignissimos consequatur atque veniam minima itaque doloremque ab iste? Dolores, ipsam! Dicta, placeat officiis distinctio minima officia ratione pariatur expedita saepe!
+                </p>
+                <a href="">View Profile</a>
+            </div>
+        </div>
+    </div>
 </section>
 {%endblock%}

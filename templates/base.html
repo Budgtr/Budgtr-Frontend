@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/micromodal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/img.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/engine.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='owlcarousel/assets/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='owlcarousel/assets/owl.theme.green.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toastify.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
 </head>
 <body>
     <header>
@@ -40,7 +42,7 @@
                 </ul>
             </nav>
         </div>
-        <div id="try">
+        <div id="try" class="animate__animated animate__bounce animate__delay-3s animate__infinite">
             <a href="#tryit" class="try_it_out">Try it!</a>
         </div>
         <div id="auth">
@@ -81,6 +83,6 @@
     crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/micromodal.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toastify-js.js') }}"></script>
 </body>
 </html>
