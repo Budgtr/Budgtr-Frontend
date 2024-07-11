@@ -16,3 +16,20 @@ section{
 .budget_slides{
     height: 500px;
 }
+
+.img-bg-container{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(178, 181, 184, 0.575), rgba(19, 59, 93, 0.589)), url('../img/Solomon.jpeg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.img-bg-container-2{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left,rgba(178, 181, 184, 0.575), rgba(19, 59, 93, 0.589)), url('../img/Iyanu.JPG');
+    background-position: top center;
+    background-size: cover;
+}

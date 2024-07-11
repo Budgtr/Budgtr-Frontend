@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    height: 90%;
 }
 
 .col-6{
@@ -70,4 +71,8 @@
 .text-center{
     text-align: center;
     border: 1px solid;
+}
+
+.p-5{
+    padding: 30px;
 }
