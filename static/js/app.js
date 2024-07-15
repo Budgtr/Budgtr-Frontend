@@ -17,6 +17,7 @@ $(document).ready(function(){
         autoplay:true,
         autoplayTimeout:3000
     });
+
 })
 
 function startEngine(){
@@ -28,7 +29,7 @@ function startEngine(){
         startTableEngine().then(renderCreditTable())
     }
     else{
-        table_engine.innerHTML = "<h3 class='poppins_small'>Please enter a Budget Value</h3>";
+        error("Please enter a Budget value")
     }
 }
 
@@ -88,7 +89,8 @@ function saveEntry(){
     let amount = document.getElementById('amount');
     if (item.value == "" || amount.value == "")
     {
-        // Log Error
+        error("Please enter a value")
+        return;
     }
 
     let newEntry = {
@@ -146,4 +148,36 @@ function renderDebitTable()
             table_body.appendChild(tr)
         })
     }    
+}
+
+function success(message)
+{
+    Toastify({
+        text: message,
+        duration: 2000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#fff",
+          color: "#2cb154"
+        },
+    }).showToast();
+}
+
+function error(message)
+{
+    Toastify({
+        text: message,
+        duration: 2000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#fff",
+          color: "#da4b4b"
+        },
+    }).showToast();
 }
