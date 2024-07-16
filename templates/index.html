@@ -6,9 +6,9 @@ Home
 
 {%block content %}
 <section id="home">
-    <div class="owl-carousel owl-theme container">
+    <div class="owl-carousel owl-theme">
         <div class="budget_slides row">
-            <div class="col-6">
+            <div class="col-6 d-md-none">
                 <div class="justify-center">
                     <img src="{{ url_for('static', filename='img/bugt1.jpg') }}" alt="Budget Slide">
                 </div>
@@ -21,15 +21,31 @@ Home
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="justify-center" id="slide1">
+                    <div class="container">
+                        <h4 class="poppins_medium">Plan Smart</h4>
+                        <h1 class="poppins_large">Spend Wisely</h1>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="budget_slides row">
-            <div class="col-6">
+            <div class="col-6 d-md-none">
                 <div class="justify-center">
                     <img src="{{ url_for('static', filename='img/bugt2.jpg') }}" alt="Budget Slide">
                 </div>
             </div>
-            <div class="col-6-2">
+            <div class="col-6-2 d-md-none">
                 <div class="justify-center">
+                    <div class="container">
+                        <h4 class="poppins_medium">Save Today</h4>
+                        <h1 class="poppins_large">Thrive Tomorrow</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="justify-center" id="slide2">
                     <div class="container">
                         <h4 class="poppins_medium">Save Today</h4>
                         <h1 class="poppins_large">Thrive Tomorrow</h1>
@@ -65,8 +81,8 @@ Home
 </section>
 <section id="tryit" class="container">
     <div class="app container">
-        <div class="row">
-            <div class="col-6">
+        <div class="get-started-row">
+            <div class="get-started-engine">
                 <h2 class="poppins_large engine_header">
                     Get Started
                 </h2>
@@ -80,7 +96,7 @@ Home
                     </div>
                 </div>
             </div>
-            <div class="col-6-2">
+            <div class="get-started-img">
                 <div class="justify-center">
                     <img src="{{ url_for('static', filename='img/plan-money.svg') }}" width="80%" style="align-self: center; color:rgb(79, 47, 47);">
                 </div>
@@ -101,9 +117,9 @@ Home
             </div>
             <div class="profile-text">
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dignissimos consequatur atque veniam minima itaque doloremque ab iste? Dolores, ipsam! Dicta, placeat officiis distinctio minima officia ratione pariatur expedita saepe!
+                    Hi everyone! I'm Solomon Okomowho, aka Darth Jade-i, a co-creator of this innovative budgeting app.
                 </p>
-                <a href="">View Profile</a>
+                <a onclick="openProfileModal('solomon')">Read More</a>
             </div>
         </div>
         <div class="profile_card">
@@ -112,11 +128,29 @@ Home
             </div>
             <div class="profile-text">
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dignissimos consequatur atque veniam minima itaque doloremque ab iste? Dolores, ipsam! Dicta, placeat officiis distinctio minima officia ratione pariatur expedita saepe!
+                    I'm Iyanuoluwa Dayisi, a co-creator of Budgtr. I am Back-End Developer with 4 years experience in the software development industry.                
                 </p>
-                <a href="">View Profile</a>
+                <a onclick="openProfileModal('iyanu')">Read More</a>
             </div>
         </div>
     </div>
 </section>
+<div class="modal">
+    <div class="profile-modal">
+        <div class="profile-modal-text">
+            <p class="p-text-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla asperiores impedit cumque iusto alias pariatur amet repellat. Libero asperiores officiis nulla assumenda quibusdam soluta numquam. Esse amet corporis eum suscipit.
+            </p>
+        </div>
+        <div class="profile-modal-img">
+            <img src="" id="profile-modal-img">
+        </div>
+        <div class="close" onclick="closeModal()">
+            <span> &times;</span>
+        </div>
+        <div class="view-profile">
+            <a href="" target="_blank">View Profile &#8594;</a>
+        </div>
+    </div>
+</div>
 {%endblock%}

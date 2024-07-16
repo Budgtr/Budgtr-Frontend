@@ -181,3 +181,36 @@ function error(message)
         },
     }).showToast();
 }
+
+
+function openProfileModal(key)
+{
+    let img = document.getElementById('profile-modal-img');
+    let text = document.querySelector('.profile-modal-text p');
+    let link = document.querySelector('.view-profile a');
+    let modal = document.querySelector('.modal');
+
+    let profileObjs = {
+        "solomon" : {
+            "img" : "/static/img/Solomon.jpeg",
+            "text" : "Hi everyone! I'm Solomon Okomowho, aka Darth Jade-i, a co-creator of this innovative budgeting app. With eight years in experiential brand activation, I pursued software engineering to develop user-friendly applications. I hold a B.Tech in Pure and Applied Mathematics from LAUTECH and am currently enrolled in the ALX Software Engineering program. Partnering with Tobi, we identified a need for comprehensive budgeting tools that help users manage spending effectively. I enjoy chess, which enhances my problem-solving skills, and aspire to transition into video game development",
+            "profile_link" : "https://linktr.ee/Solomon_Okomowho"
+        },
+        "iyanu" : {
+            "img" : "/static/img/Iyanu.JPG",
+            "text" : "I'm Iyanuoluwa Dayisi, a co-creator of Budgtr. I am Back-End Developer with 4 years experience in the software development industry. Although a graduate of Civil Engineering from OAU, I am enrolled in the Software Engineering programme in ALX.",
+            "profile_link" : "https://github.com/Thobeats"
+        }
+    }
+
+    img.src = profileObjs[key].img
+    text.innerHTML = profileObjs[key].text
+    link.href = profileObjs[key].profile_link
+    modal.style.display = 'block'    
+}
+
+function closeModal()
+{
+    let modal = document.querySelector('.modal');
+    modal.style.display = 'none';
+}

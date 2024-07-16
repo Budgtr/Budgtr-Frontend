@@ -17,3 +17,7 @@ button:hover {
 .button-right{
     float: right;
 }
+
+.button-primary{
+    background-color: #04213b;
+}

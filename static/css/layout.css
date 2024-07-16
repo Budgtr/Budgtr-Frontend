@@ -74,5 +74,49 @@
 }
 
 .p-5{
+    padding: 30px 5px;
+}
+
+.p-text-5{
     padding: 30px;
+}
+
+.col-md-12{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .row{
+        grid-template-rows: repeat(4, 1fr);
+        height: 100vh;
+    }
+
+    .col-md-12{
+        grid-column: 1/13; 
+        grid-row:1/5;
+        display:block;
+    }
+
+    .container{
+        padding: 10px 5px;
+    }
+
+    .p-5{
+        padding: 10px 20px;
+        width: fit-content;
+    }
+
+    .col-6{
+        grid-column: 1/7; 
+        grid-row:1/5;
+    }
+    .col-8{
+        grid-column: 1/10; 
+        grid-row:1/5;
+    }
+    .col-6-2{
+        grid-column: 7/13; 
+        grid-row:1/5;
+    }
 }

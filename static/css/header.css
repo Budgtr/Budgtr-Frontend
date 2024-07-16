@@ -110,3 +110,16 @@ header{
     cursor: pointer;
     color: #ff6400;
 }
+
+@media only screen and (max-width: 768px) {
+    #logo{
+        grid-column: 1/2;
+    }
+
+    #nav {
+        grid-column: 2/6;
+    }
+    #try{
+        grid-column: 5/7;
+    }    
+}
